@@ -17,7 +17,7 @@ cr-sqlite is integrated to React via `useQuery` hooks. [docs](https://vlcn.io/do
 - [[Moving to OPFS]] will require a re-work of the react integration. We can presumably batch all returned data into the same event loop tick in this situation, however, which may actually be a beneift
 
 # Structured Data
-- Drizzle allows us to pull hierarchical data rather easily: https://orm.drizzle.team/docs/rqb
+- Drizzle allows us to pull [[converting relations to hierarchies|hierarchical data]] rather easily: https://orm.drizzle.team/docs/rqb
 	- We could use that to
 		- Enable larger queries to deal with the [[wasm tax]]
 		- Enable the GraphQL like vision https://twitter.com/schickling/status/1599076832107630594
