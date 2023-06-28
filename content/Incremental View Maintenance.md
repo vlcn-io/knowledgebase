@@ -6,7 +6,7 @@ Most apps are read, not write, heavy. Incremental view maintenance lets us shift
 
 The Noria project shows it best:
 
-![[attachments/Pasted image 20230628100342.png]]
+![[/attachments/Pasted image 20230628100342.png]]
 > Noria automatically keeps cached results up-to-date as the underlying data, stored in persistent _base tables_, change. Noria uses partially-stateful data-flow to reduce memory overhead, and supports dynamic, runtime data-flow and query change.
 
 # Implementing
