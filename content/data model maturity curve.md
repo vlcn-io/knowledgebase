@@ -1,3 +1,7 @@
+---
+title: "data model maturity curve"
+---
+
 Data models in UI applications go through a maturity curve.
 
 1. They start as fully in-memory with some lazy persist of the entire blob over the network

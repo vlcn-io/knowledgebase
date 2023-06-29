@@ -1,3 +1,7 @@
+---
+title: "converting relations to hierarchies"
+---
+
 Applications generally need their data in a hierarchical format. E.g., a UI is a tree where data is passed down the tree to hydrate components.
 
 Relation are of course great -- they let us view the data in any tree like structure we want whereas if we start with a tree we're stuck in that singular format.
