@@ -1,3 +1,7 @@
+---
+title: "type safe sql"
+---
+
 #project
 
 People keep writing crappy query builders in order to get type safety in their language of choice.
