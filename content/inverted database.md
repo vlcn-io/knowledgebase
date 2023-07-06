@@ -2,6 +2,8 @@
 title: "inverted database"
 ---
 
+#project
+
 The reactivity problem is a matter of answering the question:
 > For a given write, what queries are invalidated by that write?
 

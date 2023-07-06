@@ -1,6 +1,7 @@
 ---
 title: "react integration"
 ---
+#doc
 
 cr-sqlite is integrated to React via `useQuery` hooks. [docs](https://vlcn.io/docs/js/react)
 

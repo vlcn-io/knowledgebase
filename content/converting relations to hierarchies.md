@@ -1,6 +1,9 @@
 ---
 title: "converting relations to hierarchies"
+priority: "p1"
 ---
+
+#blog
 
 Applications generally need their data in a hierarchical format. E.g., a UI is a tree where data is passed down the tree to hydrate components.
 

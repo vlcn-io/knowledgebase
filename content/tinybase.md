@@ -1,8 +1,12 @@
 ---
 title: "tinybase"
+priority: "p3"
 ---
 
-#project 
+#project
+
+- Needs to only ingest synced row on sync
+- Needs to only saved modified rows on persist
 
 - Loads just the changed row(s) after sync events?
 - Saves just the changed state to DB on interval?

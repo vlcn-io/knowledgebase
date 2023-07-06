@@ -1,6 +1,9 @@
 ---
 title: "Incremental View Maintenance"
+priority: "p1"
 ---
+
+#project
 
 Most apps are read, not write, heavy. Incremental view maintenance lets us shift work to deal with this reality. We can do _more work_ on write in order to _save time_ on read.
 

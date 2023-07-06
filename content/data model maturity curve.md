@@ -1,6 +1,9 @@
 ---
 title: "data model maturity curve"
+priority: "p1"
 ---
+
+#blog
 
 Data models in UI applications go through a maturity curve.
 
