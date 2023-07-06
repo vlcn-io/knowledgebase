@@ -1,5 +1,6 @@
 ---
 title: "worker coordinate"
+priority: "depends on o2"
 ---
 #project 
 

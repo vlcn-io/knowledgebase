@@ -1,6 +1,6 @@
 ---
 title: "tinybase"
-priority: "p3"
+priority: "p4"
 ---
 
 #project
