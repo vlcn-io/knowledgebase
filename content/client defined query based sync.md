@@ -40,7 +40,23 @@ What is the simplest way to start supporting this model?
 - Each `useQuery` can set up a subscription with the backend
 	- Of course multiplexed over a single connection
 - LiteFS issue... we just know of DB change not what changed. You could get "what" via a db_version query and map that what to subscribers.
-- 
+- how do we resume a userQuery? Need to know the db_version it last left off at + user's bloom filter of restricted reads.
+	- Run the query only grabbing rows past the given db_version?
+		- but need to get "now visible due to privacy" rows which could be in the past
+	- Run the full query, returning all rows?
+	- Run the full query
+		- Return rows that are > db_version
+		- Return rows that are < db_version but possibly in the bloom filter
+
+Devs should get control over how this process works.
+
+Synchronous queries that resolve immediately based on hydrated subscriptions followed by data from disk followed by data from network...
+
+Or should we just make everything explicit to the dev instead of trying to hide it?
+
+[[mem -> disk -> network]]
+
+Queries to DB then with eventual data over the network is a new model. E.g., `SELECT * FROM foo JOIN bar`. Maybe no data exists locally for `bar` yet.
 
 
 

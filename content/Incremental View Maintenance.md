@@ -15,3 +15,5 @@ The Noria project shows it best:
 # Implementing
 - First we need to map writes to impacted queries / views via something like an [[inverted database]].
 - Potentially we would do [[differential data flow]] against the new write for the given query / view
+
+[[streaming reactivity]]
