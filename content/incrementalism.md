@@ -1,3 +1,7 @@
+---
+title: "incrementalism"
+---
+
 Every write to the database receives a corresponding database version. The database version is a continuously increasing 64 bit int. It increase on every transaction. All writes in the same transaction receive the same db version.
 
 - Inserting a row associates all columns in that row with the next db version

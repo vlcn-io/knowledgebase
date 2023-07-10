@@ -21,3 +21,7 @@ What follows re-cast:
 	- Local networking?
 	- App delivery? (dweb tomorrow example)
 	- Intent?
+	- what is network delayed vs what is immediate? Is the immediate data really complete? Mixing consistency models
+	- Local-first may not actually simplify development at all. It just looks simple at the outset.
+
+Some good thoughts in this vein are forming in [[row level security]], [[client defined query based sync]], [[incrementalism]], [[bloom filters for row level security]], [[inverted database]]

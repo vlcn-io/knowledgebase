@@ -1,3 +1,7 @@
+---
+title: "user promoted to god example"
+---
+
 - A user is added to the system.
 - The user can only see their data
 - The user is upgraded to admin

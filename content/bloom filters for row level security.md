@@ -1,3 +1,7 @@
+---
+title: "bloom filters for row level security"
+---
+
 Bloom filters don't so much implement the security mechanism as they enable tracking dirty bits so we can still incrementally send updates after privacy invalidations rather than requiring full re-pulls.
 
 ![[row level security#^d9509b]]

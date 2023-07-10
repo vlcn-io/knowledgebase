@@ -1,3 +1,7 @@
+---
+title: "row level security"
+---
+
 How might we implement row level security for the CRDT database?
 
 The big issue is that when privacy changes it can cause a bunch of new data to be visible that never had a write made to it. Given our [[incrementalism]] is based on "stuff being written", we need to somehow identify that this new data (which didn't receive a write) is available for the user. ^d9509b
