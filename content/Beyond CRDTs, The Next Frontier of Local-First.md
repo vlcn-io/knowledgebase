@@ -6,23 +6,73 @@ title: "Beyond CRDTs, the next frontier of local-first"
 
 A major problem, and the one receiving the most attention, in collaborative & local-first software is figuring out how to merge concurrent edits between users. We're going to assume that this is completely solved and that the developer experience around it is great.
 
-In this world,
+In this world:
 
-- CRDTs can live alongside normal data
+- CRDTs can live alongside, and be joined with, normal data
 - Precise merge semantics is easy to define and user intent is easy to preserve by composing off the shelf CRDTs
-- CRDTs can be easily queried over
+- Locally stored CRDTs can be easily queried over and indexed through something like SQL
 - CRDTs can easily be paged out to disk and loaded to memory as needed
 
 Things look bright. If we go off to try to build a local-first application in this world, however, we get stuck fast.
 
 # The Next Frontier
 
-A new frontier of problems show up:
+We get stuck on a new frontier of problems:
 - Auth
 - Schema evolution
 - Heterogenous devices
 - Multi-tenancy
 - Permissions & Sharing
+
+To understand the most pressing issues blocking development, we're going to be taking the mindset of a scrappy startup trying to ship a local-first app _today_. Given that, we'll make some simplifying architectural decisions and see which of the above problems still remain.
+
+# Auth
+
+The simplest way to handle auth today would be to force all access to data that exists off-device to go through a central service. The client can prove their identity to the server, the server ensures only authorized writes are synced to other clients.
+
+Auth is a non-issue under this constraint.
+
+## Schema Evolution
+
+Allowing clients to make writes while offline does introduce some problems from a schema evolution perspective. We can render this problem a non-issue by:
+
+1. Leveraging the fact that all changes must go through a central server
+2. Disallowing sync between client and server while they have mismatched schema versions
+
+Clients must upgrade to the current schema version (either via page refresh or installing an app update) to continue syncing their changes.
+
+## Heterogenous Devices
+
+This is our first _real_ problem. The issue here is that users of our app will have many different devices on which they'll install our app. Each device will have different storage and compute characteristics. All the data that can fit locally on the user's laptop likely will not fit on their phone or watch or whatever.
+
+So we're faced with the problem of how to define a subset of the user's data to sync to a device.
+
+How is this solved in traditional apps?
+
+```ts
+function Component() {
+	const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res =>
+      res.json()
+    )
+  )
+}
+```
+
+
+---
+
+To make these problems tractable, we'll assume that the local-first apps are using a server to broker all communication between clients.
+
+Given the use of a central server, auth becomes a non-issue.
+
+
+---
+
+
+## Schema Evolution
+
+Schema Evolution is interesting but we can take 
 
 Out of these 5 problems, we find that the first two are pretty easily solved by making some pragmatic choices.
 
@@ -64,6 +114,8 @@ All of these problems are about having more data in one place than can fit, or b
 The ever-present `memory -> disk -> network` data tiering still exists, even in Local-First software.
 
 How do we attack this problem?
+
+^-- treat problems individually. heterog / bottomless is unqiue as it necessitates the network bound. Could create a new problem related to devx of getting data async.
 
 # Developer Experience
 
