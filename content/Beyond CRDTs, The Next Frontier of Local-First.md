@@ -4,6 +4,8 @@ title: "Beyond CRDTs, the next frontier of local-first"
 
 #presentation
 
+[[lofi presentations]]
+
 A major problem, and the one receiving the most attention, in collaborative & local-first software is figuring out how to merge concurrent edits between users. We're going to assume that this is completely solved and that the developer experience around it is great.
 
 In this world:
@@ -15,14 +17,24 @@ In this world:
 
 Things look bright. If we go off to try to build a local-first application in this world, however, we get stuck fast.
 
+History lesson on _how we got here_
+
 # The Next Frontier
 
 We get stuck on a new frontier of problems:
 - Auth
 - Schema evolution
 - Heterogenous devices
+	- Get data where needed, when needed
+	- Why this is a problem
+	- Cloud history and how we got here
+	- Why we love cloud for this
+	- https://rocksdb.org/blog/2022/11/09/time-aware-tiered-storage.html
 - Multi-tenancy
 - Permissions & Sharing
+- Data Flow
+- Notifications?
+- Server Authoritative data... Or centralized decisions.
 
 To understand the most pressing issues blocking development, we're going to be taking the mindset of a scrappy startup trying to ship a local-first app _today_. Given that, we'll make some simplifying architectural decisions and see which of the above problems still remain.
 
